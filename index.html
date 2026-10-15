@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hardwood Supply</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Hardwood Supply home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="var(--accent)"/><g fill="none" stroke="var(--bg)" stroke-width="2"><path d="M16 2V30M2 16H30"/><path d="M6 6Q14 16 6 26M26 6Q18 16 26 26"/></g></svg>
+      Hardwood Supply
+    </a>
+    <div class="search">
+      <label class="sr" for="q">Search gear</label>
+      <input id="q" type="search" placeholder="Search jerseys, balls, rims, shoes" autocomplete="off">
+    </div>
+    <button class="cartbtn" id="openCart" type="button" aria-haspopup="dialog">
+      Cart <span class="n" id="badge" data-zero="true">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <svg class="court" viewBox="0 0 500 340" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+      <rect x="10" y="10" width="480" height="320"/>
+      <rect x="170" y="10" width="160" height="190"/>
+      <circle cx="250" cy="200" r="60"/>
+      <path d="M30 10V110A220 220 0 0 0 470 110V10"/>
+      <path d="M220 40H280"/>
+      <circle cx="250" cy="52" r="9"/>
+    </svg>
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Basketball gear, shipped nationwide</p>
+        <h1>Everything for your next game</h1>
+        <p class="lede">Jerseys, game balls, rims, court shoes and the small stuff that gets you through four quarters.</p>
+        <div class="cta">
+          <a class="btn" href="#shop">Shop all gear</a>
+          <a class="btn ghost" href="#shop" data-jump="jersey">Jerseys</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="facts">
+    <div class="wrap">
+      <ul>
+        <li><b>Free delivery</b><span>on orders over ₱3,000</span></li>
+        <li><b>7-day</b><span>size exchange</span></li>
+        <li><b>Rim height</b><span>10 ft (3.05 m)</span></li>
+        <li><b>Size 7 ball</b><span>29.5 in around</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="shop" id="shop">
+    <div class="wrap">
+      <div class="shop-head">
+        <h2>The shop</h2>
+        <p class="count" id="count" aria-live="polite"></p>
+      </div>
+      <div class="bar">
+        <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+        <label class="sortwrap">Sort
+          <select id="sort">
+            <option value="featured">Featured</option>
+            <option value="asc">Price: low to high</option>
+            <option value="desc">Price: high to low</option>
+          </select>
+        </label>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="guide" aria-labelledby="gh">
+    <div class="wrap">
+      <div>
+        <h2 id="gh">Ball size guide</h2>
+        <p>Pick the ball that matches who is playing. A rim is the same 18 in across at every level, so size only changes the ball.</p>
+      </div>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Size</th><th>Around</th><th>Who plays with it</th></tr></thead>
+          <tbody>
+            <tr><td>7</td><td>29.5 in (75 cm)</td><td>Men, ages 14 and up</td></tr>
+            <tr><td>6</td><td>28.5 in (72 cm)</td><td>Women, ages 12 to 14</td></tr>
+            <tr><td>5</td><td>27.5 in (70 cm)</td><td>Ages 9 to 11</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Hardwood Supply</span>
+    <span>Demo store: orders are not processed and no payment is taken.</span>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden>
+  <div class="d-head">
+    <h2 id="drawerTitle">Your cart</h2>
+    <button class="iconbtn" id="closeCart" type="button" aria-label="Close cart">&#10005;</button>
+  </div>
+  <div class="d-body" id="dBody"></div>
+  <div class="d-foot" id="dFoot"></div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span id="toastMsg"></span>
+  <button type="button" id="toastView">View cart</button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
